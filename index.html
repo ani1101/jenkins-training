@@ -1,51 +1,27 @@
-<!doctype html>
-<html>
-  <style>
-    body {
-      padding: 20px 5%;
-      color: white;
-      font-family: Sabon, serif;
-      margin: auto;
-      max-width: 800px;
-    }
-    @media (min-width: 600px) {
-    }
-  </style>
-  <head>
-     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <title>D & T</title>
-  </head>
-  <body>
-  <center>   
-    <div id="headline">
-      <header>
-        <h1>Date and Time</h1>
-        <p></p>
-      </header>
-      <div id="blurb">
-        <p>This page will show you your current local time.</p> 
-      </div>
-    </div>
-    <div id="section1">
-      <h2></h2>
-      <p>It is now</p>
-    </div>
-    <div id="section2">
-      <script type="text/javascript">
-      document.write ('<p>----<span id="date-time">', new Date().toLocaleString(), '<\/span>----<\/p>')
-      if (document.getElementById) onload = function () {
-    setInterval ("document.getElementById ('date-time').firstChild.data = new Date().toLocaleString()", 50)
-      }
-      </script>
-    </div>
-    <div id="section3">
-      <div style="position: absolute; bottom: 5px">
-        <i>RG</i>
-      </div>
-    </div>
-    <footer>
-      <p><i>Created 26 May 2017</i></p>
-    </footer>
-  </center>
-  </body>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-EN" lang="en-EN" >
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Mil Gaya Naya Version</title>
+
+<style>
+body, html { font-size:8vh; padding:1em; }
+</style>
+
+<link rel="manifest" href="manifest.json">
+
+<script type="text/javascript">
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('./service-worker.js')
+   .then(function() { console.log('Service Worker Registered'); });
+}
+</script>
+
+</head>
+
+<body>
+
+This is just a start page for your Progressive Web Application, to demonstrate PWAssist functionality.
+
+</body>
 </html>
