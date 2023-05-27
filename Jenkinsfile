@@ -4,6 +4,13 @@ pipeline {
         string(name: 'DOCKER_TAG', defaultValue: '', description: '')
     }
     stages {
+	stage('Update Code Version') {
+            steps {
+                sh '''
+                chmod u+x update_version.sh
+		./update_version.sh 
+                '''
+            }
         stage('Build Dockerfile') {
             steps {
                 sh '''
