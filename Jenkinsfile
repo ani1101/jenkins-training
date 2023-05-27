@@ -11,6 +11,7 @@ pipeline {
 		./update_version.sh 
                 '''
             }
+	}
         stage('Build Dockerfile') {
             steps {
                 sh '''
