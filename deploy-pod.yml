@@ -8,8 +8,8 @@ metadata:
   annotations:
     kubernetes.io/change-cause: repo:${DOCKER_TAG}
 spec:
-  replicas: 2
-  minReadySeconds: 30
+  replicas: 1
+  minReadySeconds: 1
   strategy:
     rollingUpdate:
       maxSurge: 0
