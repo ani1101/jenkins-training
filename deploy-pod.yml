@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: firstdeploy
+  namespace: prod
+  labels:
+    name: deployment
+  annotations:
+    kubernetes.io/change-cause: "Deploy HTTPD V3"
+spec:
+  replicas: 1
+  minReadySeconds: 1
+  strategy:
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 1
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      env: prod
+  template:
+    metadata:
+       name: deploy-pods
+       labels:
+         env: prod
+    spec:
+      containers:
+        - name: container1
+          image: anirudh1101/kubernetes-test:temp:${DOCKER_TAG}

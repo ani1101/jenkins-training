@@ -28,6 +28,13 @@ pipeline {
                 '''
             }
         }
+	stage('Deploy Kubernetes Cluster') {
+            steps {
+                sh '''
+                sudo kubectl apply -f deploy.yml
+                '''
+            }
+        }
     }
 }
 
