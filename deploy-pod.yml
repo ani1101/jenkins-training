@@ -26,4 +26,4 @@ spec:
     spec:
       containers:
         - name: container1
-          image: anirudh1101/kubernetes-test:temp:${DOCKER_TAG}
+          image: anirudh1101/kubernetes-test:repo:${DOCKER_TAG}
