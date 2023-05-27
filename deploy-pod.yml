@@ -6,7 +6,7 @@ metadata:
   labels:
     name: deployment
   annotations:
-    kubernetes.io/change-cause: "Time=repo:${DOCKER_TAG}"
+    kubernetes.io/change-cause: repo:${DOCKER_TAG}
 spec:
   replicas: 1
   minReadySeconds: 1
