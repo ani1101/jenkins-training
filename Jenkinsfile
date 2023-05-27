@@ -35,6 +35,14 @@ pipeline {
                 '''
             }
         }
+	stage('Deploy Kubernetes Cluster') {
+            steps {
+                sh '''
+                echo "Deployment revision is ....."
+                sudo kubectl rollout history deploy firstdeploy -n prod
+                '''
+            }
+        }
     }
 }
 
