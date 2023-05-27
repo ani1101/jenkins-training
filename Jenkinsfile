@@ -35,7 +35,7 @@ pipeline {
                 '''
             }
         }
-	stage('Deploy Kubernetes Cluster') {
+	stage('List the Revision Numbers') {
             steps {
                 sh '''
                 echo "Deployment revision is ....."
