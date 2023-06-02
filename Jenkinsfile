@@ -28,7 +28,14 @@ pipeline {
                 '''
             }
         }
-	stage('Add K8 Service') {
+	stage('Create K8 NS Prod') {
+            steps {
+                sh '''
+                kubectl create ns prod
+                '''
+            }
+        }
+	stage('Create K8 Service') {
     	    steps {
                 script {
                     try {
