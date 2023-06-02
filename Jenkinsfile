@@ -28,6 +28,17 @@ pipeline {
                 '''
             }
         }
+	stage('Add K8 Service') {
+    	    steps {
+                script {
+                    try {
+                        sh "kubectl apply -f service.yml"
+                    } catch(error) {
+                        sh "kubectl create -f service.yml"
+                    }
+                }
+            }    
+        }
 	stage('Deploy Kubernetes Cluster') {
             steps {
                 sh '''
