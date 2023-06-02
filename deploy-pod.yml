@@ -28,9 +28,9 @@ spec:
         - name: container1
           image: anirudh1101/kubernetes-test:repo:${DOCKER_TAG}
           resources:
-          requests:
-            memory: "64Mi"
-            cpu: "125m"
-          limits:
-            memory: "128Mi"
-            cpu: "250m"
+            requests:
+              memory: "64Mi"
+              cpu: "125m"
+            limits:
+              memory: "128Mi"
+              cpu: "250m"
