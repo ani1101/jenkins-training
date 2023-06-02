@@ -30,11 +30,15 @@ pipeline {
         }
 	stage('Create K8 NS Prod') {
             steps {
-                sh '''
-                sudo kubectl create ns prod
-                '''
-            }
-        }
+                script {
+                    try {
+                        sh "sudo kubectl create ns prod"
+                    } catch(error) {
+                        echo "Created hai already...."
+                    }
+                }
+            }			
+       }
 	stage('Create K8 Service') {
     	    steps {
                 script {
