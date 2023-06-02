@@ -1,0 +1,13 @@
+<   Namespace                   Name                CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+<   ---------                   ----                ------------  ----------  ---------------  -------------  ---
+<   default                     pod3                0 (0%)        0 (0%)      0 (0%)           0 (0%)         27m
+<   default                     pod4                0 (0%)        0 (0%)      0 (0%)           0 (0%)         34m
+<   kube-system                 aws-node-wtvbc      25m (2%)      0 (0%)      0 (0%)           0 (0%)         35m
+<   kube-system                 kube-proxy-mmqnd    100m (10%)    0 (0%)      0 (0%)           0 (0%)         35m
+---
+>   Namespace                   Name                        CPU Requests  CPU Limits  Memory Requests  Memory Limits  Age
+>   ---------                   ----                        ------------  ----------  ---------------  -------------  ---
+>   kube-system                 aws-node-nqfxm              25m (2%)      0 (0%)      0 (0%)           0 (0%)         36m
+>   kube-system                 coredns-55fb5d545d-d6xl2    100m (10%)    0 (0%)      70Mi (12%)       170Mi (30%)    41m
+>   kube-system                 coredns-55fb5d545d-kpjcp    100m (10%)    0 (0%)      70Mi (12%)       170Mi (30%)    41m
+>   kube-system                 kube-proxy-lzqk5            100m (10%)    0 (0%)      0 (0%)           0 (0%)         36m

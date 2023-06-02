@@ -1,0 +1,51 @@
+Helm
+
+Install Helm
+- Download helm tar.gz from below link
+https://github.com/helm/helm/releases
+- Extract tar and create symlink for helm
+
+
+Helm install s3 plugin(required git)
+# helm plugin install https://github.com/hypnoglow/helm-s3.git
+# helm plugin list
+
+Helm Create S3 bucket
+ex- firstbucketec2
+
+Helm Initialize S3 repo
+# helm s3 init s3://firstbucketec2/charts
+
+Helm add repo to s3(remote repositories/ Remote Helm Chart)
+# helm repo add fisrt-helm-repo s3://firstbucketec2/charts
+# helm repo list
+
+Helm create project
+# helm create first-helm-project
+
+Helm update templates(Update yamls inside template and values inside values.yaml)
+
+
+Helm package project(includes templates and values)
+# helm package first-helm-project
+
+Helm push package to repo(repo is linked with s3 remote repository / Helm remote chart)
+# helm s3 push --relative ./first-helm-project-0.1.0.tgz fisrt-helm-repo
+# helm search repo fisrt-helm-repo
+o/p will show the version of package
+
+Helm upgrade package
+# helm upgrade first-helm-project fisrt-helm-repo/first-helm-project -f values.yaml
+
+
+Helm deploy the chart
+# helm install -n prod first-helm-project fisrt-helm-repo/first-helm-project (repo name o/p name of helm search repo repo_name) --version 0.1.0
+# helm ls
+It will list the helm 
+
+
+
+
+
+
+

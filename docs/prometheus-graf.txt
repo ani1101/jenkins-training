@@ -1,0 +1,81 @@
+Prometheus
+
+# helm repo add prometheus-comminity https://prometheus-community.github.io/helm-charts
+# helm repo update
+# helm install prometheus prometheus-community/kube-prometheus-stack
+
+If you want to cusomize the prometheus values
+# helm show value prometheus-community/kube-prometheus-stack > values.yaml
+# vi values.yaml (update values in values.yaml)
+# helm install prometheus prometheus-community/kube-prometheus-stack(chart name) -f values.yaml
+
+
+#Prometheus port-forward to localhost
+
+# kubectl get pods
+# kubectl port-forward prometheus-prometheus-kube-prometheus-prometheus-0(pod) 9090
+# curl localhost:9090 (prometheus web portal can be accesible here)
+
+
+Expose prometeus service to work on node port
+# kubectl get services
+# kubectl expose service prometeus-server --type=nodePort --target-port=9090 --name=prometheus-server-ext
+# kubectl get services
+o/p: will include prometheus-server-ext
+Now we can access prometheus with pulic-ip and port
+
+#Prometheus web
+search with node_
+
+Add Grafana
+# helm repo add grafana https://grafana.github.io/helm-charts
+# helm repo update
+# helm search repo grafana
+# helm install grafana stable/graphana
+
+
+Expose grafana to node port
+# kubectl expose service grafana --type=nodePort --target-port=3000 --name=grafana-ext
+
+
+Login creds Grafana web
+# kubectl get secret -n default grafana -o yaml > secret.yaml
+It will have admin user and admin password
+# echo "enc_user/password" | openssl base64 -d ; echo
+
+
+Update 2 things in grafana dashboard Datasource and Dashboard as mentioned below:
+
+#Datasource for prometheus
+- update url and save
+
+Create Dashboard
+- go to import(+ button) and add the dashboard number(ex- 6417grafana dashboard for k8 cluster prometheus)
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Note:
+- statefulset
+

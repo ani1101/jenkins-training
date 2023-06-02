@@ -1,0 +1,18 @@
+AWS EKS:
+
+IAM: For Cluster
+Policy: AmazonEKSClusterPolicy
+
+
+IAM: For Node Group
+Policy:
+AmazonEC2ContainerRegistryReadOnly
+AmazonEKS_CNI_Policy
+AmazonEKSWorkerNodePolicy
+
+
+AWS CLI EKS
+#Check status of EKS CLuster
+aws eks --region us-east-1 describe-cluster --name demo-cluster --query cluster.status
+#configure kubectl to cluster
+aws eks --region us-east-1 update-kubeconfig --name demo-cluster
