@@ -31,7 +31,7 @@ pipeline {
 	stage('Create K8 NS Prod') {
             steps {
                 sh '''
-                kubectl create ns prod
+                sudo kubectl create ns prod
                 '''
             }
         }
@@ -39,9 +39,9 @@ pipeline {
     	    steps {
                 script {
                     try {
-                        sh "kubectl apply -f service.yml"
+                        sh "sudo kubectl apply -f service.yml"
                     } catch(error) {
-                        sh "kubectl create -f service.yml"
+                        sh "sudo kubectl create -f service.yml"
                     }
                 }
             }    
