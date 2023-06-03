@@ -1,0 +1,21 @@
+# Destroy only one resource
+$ terraform destroy -target resource_id.resource-name
+
+
+#Preserved key in terraform 
+Ex: AWS secrets
+We have to instruct terraform to use paticular profile
+
+# terraform validate
+Validate syntax of terraform file
+Ex: Invalid module declared, one module declared multiple times
+
+
+# Terraform lifecycle Block: Arguments available for life block:
+Create before destroy
+Prevent destroy
+Ignore destroy
+Replace trigger by
+
+
+

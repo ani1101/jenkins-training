@@ -1,0 +1,16 @@
+Ansible
+
+Advantages:
+- Agentless
+- push based architechture
+- password less and worked on SSH layer
+
+Ansible designed in 3 parts:
+1 Playbook: Combination of plays and each play has set of tasks
+2 Modules: Command/Scripts we used in ansible
+3 Plugins:
+
+Ansible Vault: to encrypt password
+#ansible-vault encrypt inventory.txt --output encrypted-inv.txt
+#ansible-vault decrytp encrypted-inv.txt --output inventory.txt 
+
