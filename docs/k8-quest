@@ -1,0 +1,9 @@
+#Deployment Strategy
+Rolling Update(Round Robin)
+Recreate Strategy(First create and then delete)
+
+#Type of services
+NodePort
+LoadBalancer
+
+What is Namespace
