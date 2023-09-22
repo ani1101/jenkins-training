@@ -7,8 +7,12 @@ Ex: AWS secrets
 We have to instruct terraform to use paticular profile
 
 # terraform validate
-Validate syntax of terraform file
+Validate syntax  of terraform file
 Ex: Invalid module declared, one module declared multiple times
+
+#what is state file
+#How to change in congig of already created resources ($ terraform import)
+
 
 
 # Terraform lifecycle Block: Arguments available for life block:
