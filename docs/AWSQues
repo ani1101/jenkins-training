@@ -1,0 +1,7 @@
+Spot/Reserved Instance
+While spot instances can offer up to 90% discount but quickly get interrupted, reserved instances offer up to 72% decreased rates and high availability, but with long commitment periods.
+
+Capacity Reservation
+Capacity Reservations, you create the capacity reservation in the required Availability Zone. Then, you can launch instances into the reserved capacity, view its capacity utilization in real time, and increase or decrease its capacity as needed
+
+EKS/ECS
