@@ -17,5 +17,21 @@ Prevent destroy
 Ignore destroy
 Replace trigger by
 
+#The create_before_destroy meta-argument changes this(first destroy and then create new resource) behavior so that the new replacement object is created first, and the prior object is destroyed after the replacement is created.
+#To block Terraform from deleting an imported resource, you can use the lifecycle block with the prevent_destroy argument set to true. This argument, when set to true, will prevent Terraform from deleting the resource during a terraform destroy operation.
+resource "aws_instance" "example" {
+  ami           = "ami-0c94855ba95c574c8"
+  instance_type = "t2.micro"
+
+  lifecycle {
+    prevent_destroy = true
+  }
+}
+
+
+
+#Terraform to update specific resource
+terraform -target=resource
+
 
 
